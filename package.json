@@ -1,0 +1,19 @@
+{
+  "name": "walletwise",
+  "productName": "WalletWise",
+  "version": "1.0.0",
+  "description": "WalletWise - Personal Budget Planner for University Students",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "budget",
+    "student",
+    "finance"
+  ],
+  "devDependencies": {
+    "electron": "^31.0.0"
+  }
+}
