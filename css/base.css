@@ -1,15 +1,4 @@
-/* ===================================================================
-   WalletWise - css/base.css
-   RESET & TYPOGRAPHY
 
-   Removes default browser spacing so every element starts from the
-   same, predictable baseline, then defines the basic text styles
-   (headings, labels, big numbers) reused across every page.
-=================================================================== */
-
-/* ---------------------------------------------------------
-   CSS RESET
---------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -52,9 +41,7 @@ svg {
 }
 
 
-/* ---------------------------------------------------------
-   TYPOGRAPHY HELPERS
---------------------------------------------------------- */
+
 h1 {
   font-size: 24px;
   font-weight: 700;
