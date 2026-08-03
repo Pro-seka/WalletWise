@@ -1,16 +1,7 @@
-/* ===================================================================
-   WalletWise - css/layout.css
-   APP LAYOUT & SIDEBAR
 
-   The app is a simple flex row: a fixed-width sidebar and a main
-   content area that fills the rest of the window. This file covers
-   that shell, the sidebar navigation links, and the dark mode
-   toggle switch that lives in the sidebar footer.
-=================================================================== */
-
-/* ---------------------------------------------------------
+/* 
    APP LAYOUT
---------------------------------------------------------- */
+ */
 .app {
   display: flex;
   height: 100vh;
@@ -37,9 +28,9 @@
 }
 
 
-/* ---------------------------------------------------------
+/* 
    SIDEBAR NAVIGATION
---------------------------------------------------------- */
+ */
 .sidebar {
   width: 250px;
   flex-shrink: 0;
@@ -122,9 +113,9 @@
 }
 
 
-/* ---------------------------------------------------------
+/*
    DARK MODE TOGGLE SWITCH
---------------------------------------------------------- */
+- */
 .theme-toggle-row {
   display: flex;
   align-items: center;
