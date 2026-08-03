@@ -1,0 +1,239 @@
+/* ===================================================================
+   WalletWise - css/components.css
+   REUSABLE UI COMPONENTS
+
+   Small, reusable pieces used across multiple pages: the dashboard
+   summary cards, the generic rounded content card, status badges,
+   progress bars, form fields/buttons, and empty-state messages.
+=================================================================== */
+
+/* ---------------------------------------------------------
+   SUMMARY CARDS (Dashboard)
+--------------------------------------------------------- */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  padding: 11px;
+}
+
+.icon-budget { background-color: var(--color-primary-soft); color: var(--color-primary); }
+.icon-income { background-color: var(--color-income-soft); color: var(--color-income); }
+.icon-expense { background-color: var(--color-expense-soft); color: var(--color-expense); }
+.icon-balance { background-color: var(--color-warning-soft); color: var(--color-warning); }
+
+.card-value {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT CARDS
+   A generic rounded card used to group related content
+   throughout the app (progress, forms, tables, lists).
+--------------------------------------------------------- */
+.content-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.narrow-card {
+  max-width: 480px;
+}
+
+.content-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.link-button {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------------------------------------------------------
+   STATUS BADGES
+--------------------------------------------------------- */
+.status-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: var(--color-income-soft);
+  color: var(--color-income);
+}
+
+.status-badge.badge-danger {
+  background-color: var(--color-expense-soft);
+  color: var(--color-expense);
+}
+
+
+/* ---------------------------------------------------------
+   PROGRESS BARS
+--------------------------------------------------------- */
+.progress-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.progress-bar-track.spaced-top {
+  margin-top: 18px;
+}
+
+.progress-bar-track.small {
+  height: 6px;
+  border: none;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-income));
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.progress-bar-fill.over-budget {
+  background: var(--color-expense);
+}
+
+.progress-caption {
+  font-size: 12.5px;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+}
+
+
+/* ---------------------------------------------------------
+   FORMS & BUTTONS
+--------------------------------------------------------- */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+  transition: border-color 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-message {
+  font-size: 12.5px;
+  font-weight: 600;
+  min-height: 16px;
+  margin-bottom: 4px;
+}
+
+.form-message.is-error {
+  color: var(--color-expense);
+}
+
+.form-message.is-success {
+  color: var(--color-income);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  color: var(--color-text);
+}
+
+
+/* ---------------------------------------------------------
+   EMPTY STATES
+--------------------------------------------------------- */
+.empty-state {
+  display: none;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  padding: 24px 10px;
+}
+
+.empty-state.visible {
+  display: block;
+}

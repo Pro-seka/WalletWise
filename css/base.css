@@ -1,0 +1,89 @@
+/* ===================================================================
+   WalletWise - css/base.css
+   RESET & TYPOGRAPHY
+
+   Removes default browser spacing so every element starts from the
+   same, predictable baseline, then defines the basic text styles
+   (headings, labels, big numbers) reused across every page.
+=================================================================== */
+
+/* ---------------------------------------------------------
+   CSS RESET
+--------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/* ---------------------------------------------------------
+   TYPOGRAPHY HELPERS
+--------------------------------------------------------- */
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 13.5px;
+  margin-top: 4px;
+}
+
+.card-label {
+  font-size: 12.5px;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.big-number {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  margin: 6px 0 10px;
+}

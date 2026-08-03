@@ -1,0 +1,181 @@
+/* ===================================================================
+   WalletWise - css/layout.css
+   APP LAYOUT & SIDEBAR
+
+   The app is a simple flex row: a fixed-width sidebar and a main
+   content area that fills the rest of the window. This file covers
+   that shell, the sidebar navigation links, and the dark mode
+   toggle switch that lives in the sidebar footer.
+=================================================================== */
+
+/* ---------------------------------------------------------
+   APP LAYOUT
+--------------------------------------------------------- */
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 40px 60px;
+}
+
+.page {
+  display: none;
+  max-width: 900px;
+}
+
+.page.active {
+  display: block;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+
+/* ---------------------------------------------------------
+   SIDEBAR NAVIGATION
+--------------------------------------------------------- */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: var(--color-sidebar);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+  margin-bottom: 28px;
+}
+
+.logo-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.nav-item.active {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.sidebar-footer {
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.sidebar-caption {
+  font-size: 11.5px;
+  color: var(--color-text-faint);
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   DARK MODE TOGGLE SWITCH
+--------------------------------------------------------- */
+.theme-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.theme-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-faint);
+  flex-shrink: 0;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch-track {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-border);
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.theme-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-surface);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch input:checked + .theme-switch-track {
+  background-color: var(--color-primary);
+}
+
+.theme-switch input:checked + .theme-switch-track .theme-switch-thumb {
+  transform: translateX(18px);
+}
