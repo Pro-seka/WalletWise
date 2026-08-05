@@ -1,11 +1,3 @@
-// ===================================================================
-// WalletWise - js/dom-elements.js
-// DOM ELEMENT REFERENCES
-// Grabbing every element we will need once, at the top, keeps the
-// rest of the code easy to read. Every other file in js/ uses these
-// same constants instead of querying the page again.
-// ===================================================================
-
 // Navigation
 const navButtons = document.querySelectorAll('[data-page]');
 const pageSections = document.querySelectorAll('.page');
