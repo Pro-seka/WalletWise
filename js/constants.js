@@ -1,10 +1,3 @@
-// ===================================================================
-// WalletWise - js/constants.js
-// CONSTANTS
-// Fixed values used throughout the app. These never change while
-// the app is running.
-// ===================================================================
-
 // Keys used to read/write data in the browser's Local Storage.
 const STORAGE_KEY_BUDGET = 'walletwise_budget';
 const STORAGE_KEY_TRANSACTIONS = 'walletwise_transactions';
