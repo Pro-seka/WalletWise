@@ -3,388 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WalletWise</title>
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/tables.css">
+  <title>WalletWise — Student Budget Planner</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
   <div class="app">
 
-    <!-- SIDEBAR NAVIGATION
-         -->
-
-    <aside class="sidebar">
-
-      <div class="sidebar-logo">
-        <span class="logo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 7a2 2 0 0 1 2-2h13a1 1 0 0 1 1 1v3H5"></path>
-            <path d="M3 7v11a2 2 0 0 0 2 2h14a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2z"></path>
-            <circle cx="16.5" cy="14" r="1.1" fill="currentColor" stroke="none"></circle>
-          </svg>
-        </span>
-        <span class="logo-text">WalletWise</span>
+    <!-- Top bar: brand + section tabs (desktop/tablet) -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-name">WalletWise</span>
+        <span class="brand-sub">Student Ledger</span>
       </div>
 
-      <nav class="sidebar-nav">
-        <button class="nav-item active" data-page="dashboard-page" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="8" height="8" rx="1.6"></rect>
-            <rect x="13" y="3" width="8" height="8" rx="1.6"></rect>
-            <rect x="3" y="13" width="8" height="8" rx="1.6"></rect>
-            <rect x="13" y="13" width="8" height="8" rx="1.6"></rect>
-          </svg>
-          <span>Dashboard</span>
-        </button>
-
-        <button class="nav-item" data-page="budget-page" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="8.2"></circle>
-            <circle cx="12" cy="12" r="4.4"></circle>
-            <circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"></circle>
-          </svg>
-          <span>Monthly Budget</span>
-        </button>
-
-        <button class="nav-item" data-page="income-page" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M12 16V8"></path>
-            <path d="M8.5 11.5 12 8l3.5 3.5"></path>
-          </svg>
-          <span>Add Income</span>
-        </button>
-
-        <button class="nav-item" data-page="expense-page" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M12 8v8"></path>
-            <path d="M8.5 12.5 12 16l3.5-3.5"></path>
-          </svg>
-          <span>Add Expense</span>
-        </button>
-
-        <button class="nav-item" data-page="history-page" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="8" y1="6" x2="21" y2="6"></line>
-            <line x1="8" y1="12" x2="21" y2="12"></line>
-            <line x1="8" y1="18" x2="21" y2="18"></line>
-            <line x1="3.5" y1="6" x2="3.5" y2="6"></line>
-            <line x1="3.5" y1="12" x2="3.5" y2="12"></line>
-            <line x1="3.5" y1="18" x2="3.5" y2="18"></line>
-          </svg>
-          <span>Transaction History</span>
-        </button>
-
-        <button class="nav-item" data-page="summary-page" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 12.5 12.5 20a1.5 1.5 0 0 1-2.1 0l-6.4-6.4a1.5 1.5 0 0 1 0-2.1L11.5 4H19a1 1 0 0 1 1 1z"></path>
-            <circle cx="15.3" cy="8.7" r="1.2" fill="currentColor" stroke="none"></circle>
-          </svg>
-          <span>Category Summary</span>
-        </button>
+      <nav class="tabs" id="tabNav">
+        <button class="tab active" data-page="dashboard">Dashboard</button>
+        <button class="tab" data-page="transactions">Transactions</button>
+        <button class="tab" data-page="budget">Budget</button>
       </nav>
+    </header>
 
-      <div class="sidebar-footer">
-        <div class="theme-toggle-row">
-          <span class="theme-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="4.2"></circle>
-              <line x1="12" y1="2.5" x2="12" y2="5"></line>
-              <line x1="12" y1="19" x2="12" y2="21.5"></line>
-              <line x1="4.2" y1="4.2" x2="6" y2="6"></line>
-              <line x1="18" y1="18" x2="19.8" y2="19.8"></line>
-              <line x1="2.5" y1="12" x2="5" y2="12"></line>
-              <line x1="19" y1="12" x2="21.5" y2="12"></line>
-              <line x1="4.2" y1="19.8" x2="6" y2="18"></line>
-              <line x1="18" y1="6" x2="19.8" y2="4.2"></line>
-            </svg>
-          </span>
+    <main class="pages">
 
-          <label class="theme-switch" for="theme-toggle-input">
-            <input type="checkbox" id="theme-toggle-input">
-            <span class="theme-switch-track"><span class="theme-switch-thumb"></span></span>
-          </label>
+      <!-- ============ DASHBOARD ============ -->
+      <section id="dashboard" class="page active">
 
-          <span class="theme-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path>
-            </svg>
-          </span>
-        </div>
-        <p class="sidebar-caption">University Student Edition</p>
-      </div>
-    </aside>
-
-    <!-- MAIN CONTENT AREA -->
-
-    <main class="main-content">
-
-      <!-- DASHBOARD PAGE -->
-      <section id="dashboard-page" class="page active">
-        <header class="page-header">
-          <h1>Dashboard</h1>
-          <p class="page-subtitle">Your budget at a glance</p>
-        </header>
-
-        <div class="summary-cards">
-          <div class="summary-card">
-            <div class="card-icon icon-budget">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="8.2"></circle>
-                <circle cx="12" cy="12" r="4.4"></circle>
-                <circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"></circle>
-              </svg>
-            </div>
-            <div class="card-info">
-              <p class="card-label">Monthly Budget</p>
-              <p class="card-value" id="card-budget">৳0.00</p>
-            </div>
+        <div class="dash-top">
+          <div class="stamp-badge" id="stampBadge">
+            <span class="stamp-label">Balance</span>
+            <span class="stamp-amount" id="stampAmount">৳0</span>
+            <span class="stamp-status" id="stampStatus">OK</span>
           </div>
 
-          <div class="summary-card">
-            <div class="card-icon icon-income">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9"></circle>
-                <path d="M12 16V8"></path>
-                <path d="M8.5 11.5 12 8l3.5 3.5"></path>
-              </svg>
-            </div>
-            <div class="card-info">
-              <p class="card-label">Total Income</p>
-              <p class="card-value" id="card-income">৳0.00</p>
-            </div>
-          </div>
-
-          <div class="summary-card">
-            <div class="card-icon icon-expense">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9"></circle>
-                <path d="M12 8v8"></path>
-                <path d="M8.5 12.5 12 16l3.5-3.5"></path>
-              </svg>
-            </div>
-            <div class="card-info">
-              <p class="card-label">Total Expenses</p>
-              <p class="card-value" id="card-expenses">৳0.00</p>
-            </div>
-          </div>
-
-          <div class="summary-card">
-            <div class="card-icon icon-balance">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9"></circle>
-                <text x="12" y="16.2" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor" stroke="none">৳</text>
-              </svg>
-            </div>
-            <div class="card-info">
-              <p class="card-label">Remaining Balance</p>
-              <p class="card-value" id="card-balance">৳0.00</p>
+          <div class="quick-actions">
+            <p class="quick-actions-label">Quick add</p>
+            <div class="quick-actions-btns">
+              <button class="btn btn-credit js-open-modal" data-type="income">+ Add Income</button>
+              <button class="btn btn-debit js-open-modal" data-type="expense">+ Add Expense</button>
             </div>
           </div>
         </div>
 
-        <div class="content-card">
-          <div class="content-card-header">
-            <h2>Budget Progress</h2>
-            <span class="status-badge" id="dashboard-status-badge">Within Budget</span>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-label">Monthly Budget</span>
+            <span class="stat-value" id="statBudget">৳0</span>
           </div>
-          <div class="progress-bar-track">
-            <div class="progress-bar-fill" id="dashboard-progress-fill"></div>
+          <div class="stat-card">
+            <span class="stat-label">Total Income</span>
+            <span class="stat-value credit-text" id="statIncome">৳0</span>
           </div>
-          <p class="progress-caption" id="dashboard-progress-caption">৳0.00 of ৳0.00 spent</p>
+          <div class="stat-card">
+            <span class="stat-label">Total Expenses</span>
+            <span class="stat-value debit-text" id="statExpenses">৳0</span>
+          </div>
         </div>
 
-        <div class="content-card">
-          <div class="content-card-header">
-            <h2>Recent Transactions</h2>
-            <button class="link-button" data-page="history-page" type="button">View all</button>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Budget progress</h2>
+            <span class="panel-sub" id="dashProgressText">০%</span>
           </div>
-          <table class="transaction-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Category/Source</th>
-                <th>Description</th>
-                <th class="align-right">Amount</th>
-              </tr>
-            </thead>
-            <tbody id="recent-transactions-body"></tbody>
-          </table>
-          <p class="empty-state" id="recent-transactions-empty">No transactions yet. Add your first income or expense!</p>
+          <div class="progress-track">
+            <div class="progress-fill" id="dashProgressFill" style="width:0%"></div>
+          </div>
         </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Spending forecast</h2>
+          </div>
+          <p class="forecast-line" id="forecastPredicted">Predicted Monthly Spending: ৳0</p>
+          <p class="forecast-note" id="forecastNote">Add an expense to see your forecast.</p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Recent entries</h2>
+          </div>
+          <ul class="entry-list" id="recentTransactionsList">
+            <!-- filled by JS -->
+          </ul>
+          <p class="empty-note hidden" id="recentEmptyNote">No transactions yet. Use Quick Add above to get started.</p>
+        </div>
+
       </section>
 
-      <!--  MONTHLY BUDGET PAGE -->
-      <section id="budget-page" class="page">
-        <header class="page-header">
-          <h1>Monthly Budget</h1>
-          <p class="page-subtitle">Set or update how much you plan to spend this month</p>
-        </header>
+      <!-- ============ TRANSACTIONS ============ -->
+      <section id="transactions" class="page">
 
-        <div class="content-card narrow-card">
-          <p class="card-label">Current Monthly Budget</p>
-          <p class="big-number" id="current-budget-display">৳0.00</p>
-          <span class="status-badge" id="budget-status-badge">Within Budget</span>
-
-          <div class="progress-bar-track spaced-top">
-            <div class="progress-bar-fill" id="budget-progress-fill"></div>
+        <div class="section-head">
+          <h1>Transactions</h1>
+          <div class="section-head-btns">
+            <button class="btn btn-credit js-open-modal" data-type="income">+ Add Income</button>
+            <button class="btn btn-debit js-open-modal" data-type="expense">+ Add Expense</button>
           </div>
-          <p class="progress-caption" id="budget-progress-caption">৳0.00 remaining</p>
         </div>
 
-        <div class="content-card narrow-card">
-          <h2>Set / Edit Budget</h2>
-          <form id="budget-form" novalidate>
-            <div class="form-group">
-              <label for="budget-amount-input">Monthly Budget Amount (৳)</label>
-              <input type="number" id="budget-amount-input" min="0" step="0.01" placeholder="e.g. 500.00">
-            </div>
-            <p class="form-message" id="budget-form-message"></p>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Save Budget</button>
-            </div>
+        <div class="panel">
+          <ul class="entry-list" id="allTransactionsList">
+            <!-- filled by JS -->
+          </ul>
+          <p class="empty-note hidden" id="allEmptyNote">No transactions recorded yet.</p>
+        </div>
+
+      </section>
+
+      <!-- ============ BUDGET ============ -->
+      <section id="budget" class="page">
+
+        <div class="section-head">
+          <h1>Budget</h1>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Monthly budget</h2>
+          </div>
+          <form id="budgetForm" class="inline-form">
+            <label for="budgetInput">Amount (৳)</label>
+            <input type="number" id="budgetInput" min="0" step="0.01" placeholder="e.g. 10000" required>
+            <button type="submit" class="btn btn-primary">Save Budget</button>
           </form>
+          <p class="current-budget-note">Current budget: <strong id="currentBudgetDisplay">৳0</strong></p>
         </div>
-      </section>
 
-      <!-- ---------------- ADD INCOME PAGE ---------------- -->
-      <section id="income-page" class="page">
-        <header class="page-header">
-          <h1>Add Income</h1>
-          <p class="page-subtitle">Record money coming in, like allowance, a part-time job, or a scholarship</p>
-        </header>
+        <p class="warning-banner hidden" id="overspendWarning"></p>
 
-        <div class="content-card narrow-card">
-          <form id="income-form" novalidate>
-            <div class="form-group">
-              <label for="income-amount-input">Amount (৳)</label>
-              <input type="number" id="income-amount-input" min="0" step="0.01" placeholder="e.g. 150.00">
-            </div>
-            <div class="form-group">
-              <label for="income-source-input">Source</label>
-              <input type="text" id="income-source-input" placeholder="e.g. Part-time job, Allowance, Scholarship">
-            </div>
-            <div class="form-group">
-              <label for="income-date-input">Date</label>
-              <input type="date" id="income-date-input">
-            </div>
-            <p class="form-message" id="income-form-message"></p>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Save Income</button>
-              <button type="button" class="btn btn-secondary" id="income-clear-btn">Clear</button>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!--  ADD EXPENSE PAGE  -->
-      <section id="expense-page" class="page">
-        <header class="page-header">
-          <h1>Add Expense</h1>
-          <p class="page-subtitle">Record money going out</p>
-        </header>
-
-        <div class="content-card narrow-card">
-          <form id="expense-form" novalidate>
-            <div class="form-group">
-              <label for="expense-amount-input">Amount (৳)</label>
-              <input type="number" id="expense-amount-input" min="0" step="0.01" placeholder="e.g. 25.00">
-            </div>
-            <div class="form-group">
-              <label for="expense-category-input">Category</label>
-              <select id="expense-category-input">
-                <option value="" disabled selected>Select a category</option>
-                <option value="Food">Food</option>
-                <option value="Transport">Transport</option>
-                <option value="Books">Books</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Others">Others</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="expense-description-input">Description</label>
-              <input type="text" id="expense-description-input" placeholder="e.g. Lunch with friends">
-            </div>
-            <div class="form-group">
-              <label for="expense-date-input">Date</label>
-              <input type="date" id="expense-date-input">
-            </div>
-            <p class="form-message" id="expense-form-message"></p>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Save Expense</button>
-              <button type="button" class="btn btn-secondary" id="expense-clear-btn">Clear</button>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!-- TRANSACTION HISTORY PAGE -->
-      <section id="history-page" class="page">
-        <header class="page-header">
-          <h1>Transaction History</h1>
-          <p class="page-subtitle">Every income and expense you've recorded, newest first</p>
-        </header>
-
-        <div class="content-card">
-          <div class="content-card-header">
-            <h2>All Transactions</h2>
-            <div class="filter-group">
-              <button class="filter-btn active" data-filter="all" type="button">All</button>
-              <button class="filter-btn" data-filter="income" type="button">Income</button>
-              <button class="filter-btn" data-filter="expense" type="button">Expense</button>
-            </div>
+        <div class="stat-grid stat-grid-2">
+          <div class="stat-card">
+            <span class="stat-label">Total Spending (this month)</span>
+            <span class="stat-value debit-text" id="budgetTotalSpending">৳0</span>
           </div>
-          <table class="transaction-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Category/Source</th>
-                <th>Description</th>
-                <th class="align-right">Amount</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="history-transactions-body"></tbody>
-          </table>
-          <p class="empty-state" id="history-transactions-empty">No transactions yet. Add your first income or expense!</p>
+          <div class="stat-card">
+            <span class="stat-label">Remaining Balance</span>
+            <span class="stat-value" id="budgetRemaining">৳0</span>
+          </div>
         </div>
-      </section>
 
-      <!--  CATEGORY SUMMARY PAGE  -->
-      <section id="summary-page" class="page">
-        <header class="page-header">
-          <h1>Category Summary</h1>
-          <p class="page-subtitle">Total spending in each expense category</p>
-        </header>
-
-        <div class="content-card">
-          <div class="category-summary-list" id="category-summary-list"></div>
-          <p class="empty-state" id="category-summary-empty">No expenses recorded yet.</p>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Budget progress</h2>
+            <span class="panel-sub" id="budgetProgressText">০%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="budgetProgressFill" style="width:0%"></div>
+          </div>
         </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Category breakdown</h2>
+          </div>
+          <div id="categoryBreakdown" class="category-breakdown">
+            <!-- filled by JS -->
+          </div>
+          <p class="empty-note hidden" id="categoryEmptyNote">No expenses recorded this month yet.</p>
+        </div>
+
       </section>
 
     </main>
+
+    <!-- Mobile bottom nav -->
+    <nav class="bottom-nav" id="bottomNav">
+      <button class="bottom-nav-btn active" data-page="dashboard">Dashboard</button>
+      <button class="bottom-nav-btn" data-page="transactions">Transactions</button>
+      <button class="bottom-nav-btn" data-page="budget">Budget</button>
+    </nav>
+
   </div>
 
-  <script src="js/constants.js"></script>
-  <script src="js/state.js"></script>
-  <script src="js/dom-elements.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/helpers.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/render.js"></script>
-  <script src="js/forms.js"></script>
+  <!-- ============ ADD TRANSACTION MODAL ============ -->
+  <div class="modal-overlay hidden" id="txnModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="txnModalTitle">Add Expense</h3>
+        <button type="button" class="modal-close" id="txnModalClose" aria-label="Close">×</button>
+      </div>
+
+      <form id="txnForm">
+        <label for="txnAmount">Amount (৳)</label>
+        <input type="number" id="txnAmount" min="0.01" step="0.01" placeholder="0.00" required>
+
+        <div id="categoryField">
+          <label for="txnCategory">Category</label>
+          <select id="txnCategory">
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Books">Books</option>
+            <option value="Bills">Bills</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div id="sourceField" class="hidden">
+          <label for="txnSource">Source</label>
+          <input type="text" id="txnSource" placeholder="e.g. Allowance, Part-time job">
+        </div>
+
+        <label for="txnDescription">Description</label>
+        <input type="text" id="txnDescription" placeholder="e.g. Lunch at canteen">
+
+        <label for="txnDate">Date</label>
+        <input type="date" id="txnDate" required>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="txnCancel">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="txnSubmit">Save Entry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
   <script src="js/transactions.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/init.js"></script>
+  <script src="js/budget.js"></script>
+  <script src="js/forecast.js"></script>
 </body>
 </html>
