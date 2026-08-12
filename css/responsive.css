@@ -1,0 +1,157 @@
+/* ---------------- Tablet ---------------- */
+
+@media (max-width: 800px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app {
+    padding: 20px 18px 32px;
+  }
+}
+
+/* ---------------- Mobile ---------------- */
+
+@media (max-width: 600px) {
+
+  .app {
+    padding: 16px 14px 90px; /* extra bottom padding for fixed bottom nav */
+  }
+
+  /* Hide the top tab strip, use bottom nav instead */
+  .tabs {
+    display: none;
+  }
+
+  .topbar {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 12px;
+  }
+
+  .brand {
+    padding-bottom: 0;
+  }
+
+  .stat-grid,
+  .stat-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .stamp-badge {
+    align-self: center;
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+  }
+
+  .quick-actions {
+    width: 100%;
+  }
+
+  .quick-actions-btns {
+    flex-direction: column;
+  }
+
+  .section-head-btns {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .section-head-btns .btn,
+  .quick-actions-btns .btn {
+    width: 100%;
+  }
+
+  .entry-row {
+    grid-template-columns: 32px 1fr auto;
+    grid-template-areas:
+      "no title amount"
+      "no desc  amount"
+      "no date  amount";
+    row-gap: 2px;
+  }
+
+  .entry-no { grid-area: no; }
+  .entry-main { grid-area: title; grid-row: span 2; }
+  .entry-date { grid-area: date; }
+  .entry-amount { grid-area: amount; align-self: start; }
+
+  .entry-delete {
+    grid-column: 1 / -1;
+    justify-self: end;
+    padding: 8px 14px;
+    font-size: 1.3rem;
+  }
+
+  .inline-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inline-form input {
+    width: 100%;
+  }
+
+  .inline-form button {
+    width: 100%;
+  }
+
+  .modal-card {
+    padding: 20px 18px;
+  }
+
+  /* Fixed bottom nav */
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--paper);
+    border-top: 2px solid var(--ink);
+    z-index: 40;
+  }
+
+  .bottom-nav-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    border-right: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 14px 4px;
+    min-height: 48px;
+    cursor: pointer;
+  }
+
+  .bottom-nav-btn:last-child {
+    border-right: none;
+  }
+
+  .bottom-nav-btn.active {
+    color: var(--ink);
+    font-weight: 700;
+    background: var(--paper-line);
+  }
+}
+
+/* ---------------- Small phones ---------------- */
+
+@media (max-width: 360px) {
+  .stamp-amount {
+    font-size: 1.25rem;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+}
