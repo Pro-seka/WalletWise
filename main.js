@@ -1,3 +1,6 @@
+// main.js
+// Basic Electron entry point. Opens a single window and loads index.html.
+
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
