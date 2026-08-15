@@ -1,6 +1,3 @@
-# WalletWise
-Personal Budget Planner for University Students
-
 ## Project structure
 
 ```text
@@ -14,6 +11,8 @@ WalletWise/
 │   ├── transactions.js  
 │   ├── budget.js        
 │   └── forecast.js      
+├── WalletWise Gallery/
+│   └── How_to_Use_WalletWise.mp4   
 ├── main.js               
 └── package.json          
 ```
