@@ -5,7 +5,7 @@ function setupTransactionForm() {
   const form = document.getElementById('txnForm');
 
   form.addEventListener('submit', (event) => {
-    event.preventDefault();
+    event.preventDefault(); //prevents the page from reloading
 
     const amount = parseFloat(document.getElementById('txnAmount').value);
     const description = document.getElementById('txnDescription').value.trim();
@@ -15,7 +15,7 @@ function setupTransactionForm() {
 
     const newTransaction = {
       id: Date.now(),
-      type: currentTxnType,
+      type: currentTxnType, //income or expense
       amount: amount,
       description: description,
       date: date
@@ -24,7 +24,7 @@ function setupTransactionForm() {
     if (currentTxnType === 'expense') {
       newTransaction.category = document.getElementById('txnCategory').value;
     } else {
-      const source = document.getElementById('txnSource').value.trim();
+      const source = document.getElementById('txnSource').value.trim(); //income source
       newTransaction.source = source || 'Other';
     }
 
@@ -76,7 +76,7 @@ function buildEntryRow(transaction, entryNumber) {
   return li;
 }
 
-function escapeHtml(text) {
+function escapeHtml(text) {  //prevents writing raw HTML into the description field
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
